@@ -8,7 +8,5 @@
 
 
 
-!\[Task Image](SDLC/Task01.PNG)
-
 
 
