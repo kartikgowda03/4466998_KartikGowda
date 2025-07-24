@@ -1,12 +1,3 @@
-# 4466998\_KartikGowda
+# 4466998_KartikGowda
 
-
-
-
-
-
-
-
-
-
-
+![Task Image](SDLC/Task01.PNG)
