@@ -1,5 +1,5 @@
 # 4466998_KartikGowda
 
-![Task Image](SDLC/Task01.png)
+![Task Image](SDLC/AgileQuiz.png)
 
 ![GIT_Simplilearn](GIT/Simplilearn.png)
