@@ -2,4 +2,4 @@
 
 ![Task Image](SDLC/Task01.png)
 
-![Task Image](GIT/TASK02SKILLUP.png)
+![GIT_Simplilearn](GIT/Simplilearn.png)
