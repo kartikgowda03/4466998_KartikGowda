@@ -11,4 +11,5 @@
 ![FILTERING & PATTERN COMMANDS WITH OUTPUT](LINUX/Filtering&Pattern_Outputs.pdf)
 
 ![Sololearn C Beginner](SoloLearn_C/Beginner.jpg)
+
 ![Sololearn C Intermediate](SoloLearn_C/Intermediate.jpg)
