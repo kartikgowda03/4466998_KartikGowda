@@ -10,6 +10,6 @@
 
 ![FILTERING & PATTERN COMMANDS WITH OUTPUT](LINUX/Filtering&Pattern_Outputs.pdf)
 
-![Beginner](SoloLearn_C/Beginner.jpg)
+![Beginner](SoloLearn_C/Beginner.pdf)
 
-![Intermediate](SoloLearn_C/Intermediate.jpg)
+![Intermediate](SoloLearn_C/Intermediate.pdf)
