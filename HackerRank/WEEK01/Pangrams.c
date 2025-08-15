@@ -9,10 +9,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *readline();
+char* readline();
 
 /*
- * Complete the 'timeConversion' function below.
+ * Complete the 'pangrams' function below.
  *
  * The function is expected to return a STRING.
  * The function accepts STRING s as parameter.
@@ -37,38 +37,38 @@ char *readline();
  * }
  *
  */
-char *timeConversion(char *s)
-{
-    static char result[9];
+char* pangrams(char* s) {
+    static char pang[] = "pangram";
+    static char not_pang[] = "not pangram";
 
-    int hour, minute, second;
-    char period[3];
+    bool seen[26] = { false };
+    int count = 0;
 
-    sscanf(s, "%d:%d:%d%s", &hour, &minute, &second, period);
-
-    if (strcmp(period, "AM") == 0)
-    {
-        if (hour == 12)
-            hour = 0;
-    }
-    else
-    { // PM
-        if (hour != 12)
-            hour += 12;
+    for (int i = 0; s[i] != '\0'; i++) {
+        if (isalpha((unsigned char)s[i])) {
+            int idx = tolower((unsigned char)s[i]) - 'a';
+            if (!seen[idx]) {
+                seen[idx] = true;
+                count++;
+            }
+        }
     }
 
-    sprintf(result, "%02d:%02d:%02d", hour, minute, second);
-
-    return result;
+    if (count == 26) {
+        return pang;       // all letters found
+    } else {
+        return not_pang;   // missing at least one letter
+    }
 }
+
 
 int main()
 {
-    FILE *fptr = fopen(getenv("OUTPUT_PATH"), "w");
+    FILE* fptr = fopen(getenv("OUTPUT_PATH"), "w");
 
-    char *s = readline();
+    char* s = readline();
 
-    char *result = timeConversion(s);
+    char* result = pangrams(s);
 
     fprintf(fptr, "%s\n", result);
 
@@ -77,27 +77,23 @@ int main()
     return 0;
 }
 
-char *readline()
-{
+char* readline() {
     size_t alloc_length = 1024;
     size_t data_length = 0;
 
-    char *data = malloc(alloc_length);
+    char* data = malloc(alloc_length);
 
-    while (true)
-    {
-        char *cursor = data + data_length;
-        char *line = fgets(cursor, alloc_length - data_length, stdin);
+    while (true) {
+        char* cursor = data + data_length;
+        char* line = fgets(cursor, alloc_length - data_length, stdin);
 
-        if (!line)
-        {
+        if (!line) {
             break;
         }
 
         data_length += strlen(cursor);
 
-        if (data_length < alloc_length - 1 || data[data_length - 1] == '\n')
-        {
+        if (data_length < alloc_length - 1 || data[data_length - 1] == '\n') {
             break;
         }
 
@@ -105,35 +101,27 @@ char *readline()
 
         data = realloc(data, alloc_length);
 
-        if (!data)
-        {
+        if (!data) {
             data = '\0';
 
             break;
         }
     }
 
-    if (data[data_length - 1] == '\n')
-    {
+    if (data[data_length - 1] == '\n') {
         data[data_length - 1] = '\0';
 
         data = realloc(data, data_length);
 
-        if (!data)
-        {
+        if (!data) {
             data = '\0';
         }
-    }
-    else
-    {
+    } else {
         data = realloc(data, data_length + 1);
 
-        if (!data)
-        {
+        if (!data) {
             data = '\0';
-        }
-        else
-        {
+        } else {
             data[data_length] = '\0';
         }
     }
